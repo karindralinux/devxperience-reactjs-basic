@@ -1,0 +1,129 @@
+.app-container {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  min-height: 400px;
+}
+
+.app-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.input-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.todo-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.add-button {
+  padding: 0.75rem 1.5rem;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.add-button:hover {
+  background: #5568d3;
+}
+
+.add-button:active {
+  transform: scale(0.98);
+}
+
+.empty-message {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  padding: 2rem;
+}
+
+.todo-list {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.todo-item:hover {
+  background: #e9ecef;
+}
+
+.todo-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #667eea;
+}
+
+.todo-text {
+  flex: 1;
+  font-size: 1rem;
+  color: #333;
+  transition: all 0.2s;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.delete-button {
+  padding: 0.5rem 1rem;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.delete-button:hover {
+  background: #c82333;
+}
+
+.delete-button:active {
+  transform: scale(0.98);
+}
+
+.todo-stats {
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+  color: #666;
+  font-size: 0.875rem;
+}
+
