@@ -51,9 +51,11 @@ const Layout = () => {
           </ul>
         </div>
       </nav>
+      
       <main className="main-content">
         <Outlet />
       </main>
+      
       <footer className="footer">
         <p>&copy; 2024 React Router App. All rights reserved.</p>
       </footer>

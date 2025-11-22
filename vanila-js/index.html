@@ -9,15 +9,22 @@
     <div id="root">
 
         <h1>Hello World</h1>
+        <p>This is a paragraph</p>
         
     </div>
 
     <script>
         const root = document.querySelector('#root');
+
        
         const element = document.createElement('p');
         element.textContent = 'This is a paragraph';
+        
+        
         root.appendChild(element);
+
+        console.log(root)
+
 
         
     </script>

@@ -1,40 +1,45 @@
-import { useState } from 'react'
-import './App.css'
+import { useEffect, useState } from "react";
+import "./App.css";
 
 const App = () => {
-  const [todos, setTodos] = useState([])
-  const [inputValue, setInputValue] = useState('')
+  const [todos, setTodos] = useState([]);
+  const [inputValue, setInputValue] = useState("");
+
+  useEffect(() => {
+    console.log("Todo sekarang , ", todos);
+  }, [todos]);
 
   const handleAddTodo = () => {
-    if (inputValue.trim() === '') return
+    if (inputValue.trim() === "") return;
 
     const newTodo = {
       id: Date.now(),
       text: inputValue.trim(),
       completed: false,
-    }
+    };
 
-    setTodos([...todos, newTodo])
-    setInputValue('')
-  }
+    console.log(`Todo sebelum , `, todos);
+    setTodos([...todos, newTodo]);
+    setInputValue("");
+  };
 
   const handleDeleteTodo = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id))
-  }
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
 
   const handleToggleTodo = (id) => {
     setTodos(
       todos.map((todo) =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
-    )
-  }
+    );
+  };
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      handleAddTodo()
+    if (e.key === "Enter") {
+      handleAddTodo();
     }
-  }
+  };
 
   return (
     <div className="app-container">
@@ -70,10 +75,12 @@ const App = () => {
                 checked={todo.completed}
                 onChange={() => handleToggleTodo(todo.id)}
                 className="todo-checkbox"
-                aria-label={`Mark "${todo.text}" as ${todo.completed ? 'incomplete' : 'complete'}`}
+                aria-label={`Mark "${todo.text}" as ${
+                  todo.completed ? "incomplete" : "complete"
+                }`}
               />
               <span
-                className={`todo-text ${todo.completed ? 'completed' : ''}`}
+                className={`todo-text ${todo.completed ? "completed" : ""}`}
               >
                 {todo.text}
               </span>
@@ -92,13 +99,14 @@ const App = () => {
       {todos.length > 0 && (
         <div className="todo-stats">
           <span>
-            Total: {todos.length} | Completed: {todos.filter((t) => t.completed).length} | Remaining: {todos.filter((t) => !t.completed).length}
+            Total: {todos.length} | Completed:{" "}
+            {todos.filter((t) => t.completed).length} | Remaining:{" "}
+            {todos.filter((t) => !t.completed).length}
           </span>
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default App
-
+export default App;
